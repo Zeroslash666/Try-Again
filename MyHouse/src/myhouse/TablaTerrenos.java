@@ -39,6 +39,11 @@ public class TablaTerrenos extends javax.swing.JFrame {
         btnconsulta.setText("Consulta");
 
         btnback.setText("Volver Menu");
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
+            }
+        });
 
         tblterreno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,6 +95,14 @@ public class TablaTerrenos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+        // Volver al Menu
+        MenuInicio form = new MenuInicio();
+        form.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        form.setVisible(true);
+        this.setVisible(false);        
+    }//GEN-LAST:event_btnbackActionPerformed
 
     /**
      * @param args the command line arguments
