@@ -5,6 +5,8 @@
  */
 package myhouse;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zero
@@ -37,6 +39,11 @@ public class TablaTerrenos extends javax.swing.JFrame {
         setTitle("Terrenos");
 
         btnconsulta.setText("Consulta");
+        btnconsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnconsultaActionPerformed(evt);
+            }
+        });
 
         btnback.setText("Volver Menu");
         btnback.addActionListener(new java.awt.event.ActionListener() {
@@ -49,12 +56,17 @@ public class TablaTerrenos extends javax.swing.JFrame {
             new Object [][] {
                 {"Zambrano", "100m2", "150,000.00"},
                 {"Siguatepeque", "110m2", "200,000.00"},
-                {"Valle de Angeles", "150m2", "310,000.00"}
+                {"Valle de Angeles", "200m2", "310,000.00"}
             },
             new String [] {
                 "Direccion", "Area", "Precio"
             }
         ));
+        tblterreno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblterrenoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblterreno);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MyHouse Ico.jpg"))); // NOI18N
@@ -70,13 +82,14 @@ public class TablaTerrenos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(214, 214, 214))
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,6 +116,51 @@ public class TablaTerrenos extends javax.swing.JFrame {
         form.setVisible(true);
         this.setVisible(false);        
     }//GEN-LAST:event_btnbackActionPerformed
+
+    private void tblterrenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblterrenoMouseClicked
+        // Activando evento click en tabla
+        
+        int fila = tblterreno.getSelectedRow();
+        
+        System.out.println("Number: " + fila);
+        
+        
+    }//GEN-LAST:event_tblterrenoMouseClicked
+
+    private void btnconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconsultaActionPerformed
+        // Consulta de Terrenos de miedo
+        int fila = tblterreno.getSelectedRow();
+        
+        if (fila==0){
+            
+            Consultater1 frmconsulta1 = new Consultater1();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else if (fila==1){
+            
+            Consultater2 frmconsulta1 = new Consultater2();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else if (fila==2){
+            
+            Consultater3 frmconsulta1 = new Consultater3();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else {
+        
+            JOptionPane.showMessageDialog(this,"Elija una Opcion de la tabla");
+        
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnconsultaActionPerformed
 
     /**
      * @param args the command line arguments

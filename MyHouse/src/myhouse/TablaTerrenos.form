@@ -31,14 +31,17 @@
               <Component id="btnback" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="54" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="54" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -65,6 +68,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Consulta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnconsultaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnback">
       <Properties>
@@ -93,7 +99,7 @@
                 <Column editable="true" title="Area" type="java.lang.Object">
                   <Data value="100m2"/>
                   <Data value="110m2"/>
-                  <Data value="150m2"/>
+                  <Data value="200m2"/>
                 </Column>
                 <Column editable="true" title="Precio" type="java.lang.Object">
                   <Data value="150,000.00"/>
@@ -125,6 +131,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblterrenoMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

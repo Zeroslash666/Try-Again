@@ -147,9 +147,23 @@ public class TablaCasas extends javax.swing.JFrame {
             frmconsulta1.setVisible(true);
             this.setVisible(false);
             
+        } else if (fila==1){
+            
+            Consultacasa2 frmconsulta1 = new Consultacasa2();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else if (fila==2){
+            
+            Consultacasa3 frmconsulta1 = new Consultacasa3();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
         } else {
         
-            JOptionPane.showMessageDialog(this,"Elija la Opcion 1");
+            JOptionPane.showMessageDialog(this,"Elija una Opcion de la tabla");
         
         }      
         

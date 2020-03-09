@@ -5,6 +5,9 @@
  */
 package myhouse;
 
+import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+
 /**
  *
  * @author Zero
@@ -37,6 +40,11 @@ public class TablaApartamento extends javax.swing.JFrame {
         setTitle("Apartamentos");
 
         btnconsulta.setText("Consulta");
+        btnconsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnconsultaActionPerformed(evt);
+            }
+        });
 
         btnback.setText("Volver Menu");
         btnback.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +63,11 @@ public class TablaApartamento extends javax.swing.JFrame {
                 "Direccion", "Habitaciones", "Baños", "Precio"
             }
         ));
+        tblapartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblapartamentoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblapartamento);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MyHouse Ico.jpg"))); // NOI18N
@@ -104,6 +117,49 @@ public class TablaApartamento extends javax.swing.JFrame {
         form.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnbackActionPerformed
+
+    private void tblapartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblapartamentoMouseClicked
+        // Seleccion de Fila tabla
+        
+        int fila = tblapartamento.getSelectedRow();
+        
+        System.out.println("Number "+fila);
+                
+    }//GEN-LAST:event_tblapartamentoMouseClicked
+
+    private void btnconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconsultaActionPerformed
+        // Consulta de tabla por seleccion
+        int fila = tblapartamento.getSelectedRow();
+        
+        if (fila==0){
+            
+            Consultapart1 frmconsulta1 = new Consultapart1();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else if (fila==1){
+            
+            Consultapart2 frmconsulta1 = new Consultapart2();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else if (fila==2){
+            
+            Consultapart3 frmconsulta1 = new Consultapart3();
+            frmconsulta1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            frmconsulta1.setVisible(true);
+            this.setVisible(false);
+            
+        } else {
+        
+            JOptionPane.showMessageDialog(this,"Elija una Opcion de la tabla");
+        
+        }
+        
+        
+    }//GEN-LAST:event_btnconsultaActionPerformed
 
     /**
      * @param args the command line arguments
